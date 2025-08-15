@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/stiloLogin.css">
+</head>
+<body>
+
+    <!-- Cabeçalho com logo -->
+    <header>
+        <img src="img/logo-portalSaude.jpg" alt="Logo Portal Saúde" class="logo">
+    </header>
+
+    <!-- Conteúdo central -->
+    <div class="paginaCentral">
+        <div class="titulo">
+            <h1>Portal Saúde</h1>
+        </div>
+        <div class="login-container">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Usuário">
+            <input type="password" id="password" placeholder="Senha">
+            <button onclick="login()">Entrar</button>
+            <p class="error" id="errorMsg"></p>
+            <div class="cadastro"><a href="pagCadastro.html">Clique aqui se não possui cadastro</a></div>
+        </div>
+    </div>
+
+</body>
+</html>
