@@ -5,7 +5,7 @@ async function carregarConsultas() {
         const consultas = await resposta.json();
 
         const tbody = document.querySelector("#tabela-consultas tbody");
-        tbody.innerHTML = ""; // limpa antes de inserir
+        tbody.innerHTML = ""; 
 
         consultas.forEach(c => {
             const tr = document.createElement("tr");
@@ -23,6 +23,5 @@ async function carregarConsultas() {
     }
 }
 
-// chama quando a página carregar
 carregarConsultas();
 
