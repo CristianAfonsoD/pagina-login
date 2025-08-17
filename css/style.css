@@ -1,0 +1,408 @@
+/* CONFIGURAÇÕES GERAIS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background-color: #f8f9fa; color: #333; transition: background-color 0.3s ease, color 0.3s ease; }
+.container { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 45px; padding-right: 45px; }
+.conteudo-pagina { padding: 40px 0; text-align: center; }
+.titulo-secao { text-align: center; margin-bottom: 40px; }
+.titulo-secao h2 { font-size: 32px; margin-bottom: 10px; color: #333; }
+.titulo-secao p { font-size: 16px; color: #666; }
+
+/* DETALHE VISUAL PARA OS TÍTULOS */
+.titulo-secao h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+.titulo-secao h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #4CAF50;
+    border-radius: 2px;
+}
+
+/* CABEÇALHO E NAVEGAÇÃO */
+.cabecalho-principal { background-color: #ffffff; padding: 15px 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 999; transition: background-color 0.3s ease; }
+.cabecalho-principal .container { display: flex; align-items: center; justify-content: space-between; }
+.nav-esquerda, .nav-direita { display: flex; align-items: center; }
+.logo { font-size: 24px; font-weight: bold; color: #4CAF50; text-decoration: none; }
+.logo img { height: 50px; width: auto; vertical-align: middle; }
+.nav-principal { border-left: 2px solid #e0e0e0; margin-left: 30px; padding-left: 30px; }
+.nav-principal ul { list-style: none; }
+.nav-principal li { display: inline-block; margin-right: 20px; }
+.nav-principal a { text-decoration: none; color: #555; font-weight: bold; transition: color 0.3s; }
+.nav-principal a:hover { color: #4CAF50; }
+
+/* BOTÕES (TEMA E PERFIL) */
+.btn-alternar-tema, .btn-perfil { background: none; border: none; cursor: pointer; color: #555; }
+.btn-alternar-tema { font-size: 20px; margin-right: 20px; }
+.btn-perfil { font-size: 22px; }
+
+/* PAINEL ROTATIVO */
+.slider-principal { padding-top: 60px; margin-bottom: 60px; }
+.swiper { width: 100%; height: 400px; border-radius: 12px; overflow: hidden; }
+.swiper-slide { display: flex; justify-content: center; align-items: center; background-size: cover; background-position: center; position: relative; color: #fff; }
+.swiper-slide::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); z-index: 1; }
+.conteudo-slide { z-index: 2; max-width: 600px; padding: 20px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); text-align: center; }
+.conteudo-slide h2 { font-size: 36px; margin-bottom: 10px; }
+.conteudo-slide p { font-size: 18px; margin-bottom: 20px; }
+.btn-secundario { background: transparent; color: white; border: 2px solid white; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; text-decoration: none; transition: background-color 0.3s, color 0.3s; }
+.btn-secundario:hover { background-color: white; color: #333; }
+.swiper-button-prev, .swiper-button-next { color: #4CAF50 !important; }
+.swiper-pagination-bullet-active { background-color: #4CAF50 !important; }
+
+/* SEÇÃO DO MAPA */
+.secao-mapa { padding: 60px 0; background-color: #c2e0c3;}
+.container-mapa { position: relative; overflow: hidden; padding-top: 56.25%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.container-mapa iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+/* BARRA LATERAL DO USUÁRIO */
+.barra-lateral { height: 100%; width: 300px; position: fixed; z-index: 1001; top: 0; right: -320px; background-color: #fff; transition: right 0.4s ease-in-out, background-color 0.3s ease; box-shadow: -4px 0 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+.barra-lateral.aberto { right: 0; }
+.barra-lateral-cabecalho { padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+.barra-lateral-cabecalho h3 { margin: 0; }
+.btn-fechar-barra-lateral { background: none; border: none; font-size: 28px; cursor: pointer; color: #333; }
+.perfil-barra-lateral { display: flex; align-items: center; padding: 20px; border-bottom: 1px solid #eee; }
+.avatar-perfil { font-size: 50px; color: #ccc; margin-right: 15px; }
+.info-perfil h4 { margin: 0 0 5px 0; }
+.info-perfil p { margin: 0; font-size: 14px; color: #777; }
+.nav-barra-lateral ul { list-style: none; padding: 0; margin: 15px 0; }
+.nav-barra-lateral li a { display: block; padding: 15px 20px; text-decoration: none; color: #333; transition: background-color 0.2s; }
+.nav-barra-lateral li a:hover { background-color: #f4f4f4; }
+.nav-barra-lateral i { margin-right: 15px; width: 20px; text-align: center; }
+.rodape-barra-lateral { margin-top: auto; padding: 20px; border-top: 1px solid #eee; }
+.btn-sair { background-color: #dc3545; color: white; width: 100%; border: none; padding: 15px; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.2s; }
+.btn-sair:hover { background-color: #c82333; }
+.btn-sair i { margin-right: 10px; }
+.fundo-barra-lateral { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; }
+.fundo-barra-lateral.visivel { display: block; }
+
+/* GALERIA DE IMAGENS */
+.secao-galeria { padding: 60px 0; }
+.grid-galeria { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;}
+.item-galeria { width: 30%; min-width: 280px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); overflow: hidden; text-align: center; background-color: #c2e0c3; }
+.item-galeria img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.item-galeria h3 { font-size: 18px; padding: 15px; color: #333; }
+
+/* SEÇÃO CORPO CLÍNICO  */
+.secao-corpo-clinico { padding: 60px 0; background-color: #fff; }
+.grid-medicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.card-medico { background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); padding: 25px; text-align: center; border: 1px solid #eee;}
+.card-medico h3 { font-size: 20px; color: #333; margin-bottom: 5px; }
+.card-medico p { font-size: 16px; color: #4CAF50; font-weight: bold; }
+
+/* BOTÃO DE CHAMADA PARA AÇÃO */
+.secao-chamada-acao { padding: 60px 0; text-align: center; }
+.btn-chamada-acao { display: inline-block; background-color: #4CAF50; color: #fff; font-size: 20px; font-weight: bold; text-decoration: none; padding: 20px 40px; border-radius: 50px; box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4); transition: all 0.2s ease-in-out; }
+.btn-chamada-acao:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5); }
+.btn-chamada-acao:active { transform: translateY(1px) scale(0.98); box-shadow: 0 2px 10px rgba(76, 175, 80, 0.4); }
+
+/* RODAPÉ */
+.rodape-principal { background-color: #2c3e50; color: #bdc3c7; padding: 50px 0 0 0; }
+.conteudo-rodape { display: flex; justify-content: space-between; gap: 40px; padding-bottom: 40px; flex-wrap: wrap; }
+.coluna-rodape { flex: 1; min-width: 250px; }
+.coluna-rodape h3, .coluna-rodape h4 { color: #fff; margin-bottom: 20px; }
+.coluna-rodape h3 { font-size: 22px; }
+.coluna-rodape h4 { font-size: 18px; }
+.coluna-rodape p { line-height: 1.7; }
+.coluna-links ul { list-style: none; }
+.coluna-links li a { color: #bdc3c7; text-decoration: none; padding-bottom: 10px; display: block; transition: color 0.2s; }
+.coluna-links li a:hover { color: #fff; }
+.icones-sociais a { display: inline-block; width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.1); color: #fff; border-radius: 50%; margin-right: 10px; text-align: center; line-height: 40px; transition: background-color 0.2s; }
+.icones-sociais a:hover { background-color: #4CAF50; }
+.base-rodape { border-top: 1px solid #34495e; padding: 20px 0; text-align: center; font-size: 14px; }
+
+/* PÁGINA DE HOSPITAIS */
+.pagina-titulo {
+    background-color: #f1f5f8;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+.pagina-titulo h1 { font-size: 36px; margin-bottom: 10px; }
+
+.secao-lista-hospitais { padding: 60px 0; }
+.lista-hospitais { display: flex; flex-direction: column; gap: 20px; }
+
+.item-hospital {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: all 0.2s ease-in-out;
+}
+.item-hospital:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.hospital-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.status-bolinha {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.status-livre { background-color: #28a745; } 
+.status-moderado { background-color: #ffc107; } 
+.status-lotado { background-color: #dc3545; } 
+.hospital-botoes {
+    display: flex;
+    gap: 10px;
+}
+.btn-hospital {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.btn-hospital:hover { background-color: #45a049; }
+
+.hospital-nome {
+    margin-left: auto;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+.nav-principal a.link-ativo { color: #4CAF50; }
+
+/* PÁGINA DE HOSPITAIS */
+.pagina-titulo {
+    background-color: #f1f5f8;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+.pagina-titulo h1 { font-size: 36px; margin-bottom: 10px; }
+.container-busca {
+    position: relative;
+    max-width: 700px;
+    margin: 30px auto 0;
+}
+#campo-busca-hospitais {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+#campo-busca-hospitais:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+}
+.icone-busca {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+.mensagem-nenhum-resultado {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #777;
+}
+.secao-lista-hospitais { padding: 60px 0; }
+
+/* MODAL DE DETALHES DO HOSPITAL */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.6); }
+.modal-conteudo { background-color: #fff; margin: 10% auto; padding: 30px; border-radius: 8px; width: 90%; max-width: 600px; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.btn-fechar-modal { color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; }
+.btn-fechar-modal:hover { color: #000; }
+#modal-hospital-nome { margin-top: 0; margin-bottom: 25px; color: #333; }
+.modal-detalhe-item { display: flex; align-items: center; margin-bottom: 15px; color: #555; }
+.modal-detalhe-item i { font-size: 18px; color: #4CAF50; margin-right: 15px; width: 20px; text-align: center; }
+#modal-hospital-corpo hr { border: 0; border-top: 1px solid #eee; margin: 25px 0; }
+#modal-hospital-corpo h3 { font-size: 18px; margin-bottom: 15px; color: #333; }
+.lista-medicos-modal { list-style: none; padding-left: 0; }
+.lista-medicos-modal li { margin-bottom: 10px; padding-left: 35px; position: relative; }
+.lista-medicos-modal li::before { content: '\f00c'; font-family: 'Font Awesome 5 Free'; font-weight: 900; color: #4CAF50; position: absolute; left: 10px; }
+.lista-medicos-modal .especialidade { color: #777; font-size: 14px; margin-left: 5px; }
+.status-tag { padding: 5px 12px; border-radius: 15px; font-size: 14px; font-weight: bold; color: white; }
+
+/* MODO ESCURO */
+body.modo-escuro .pagina-titulo { background-color: #1a1a1a; border-bottom-color: #333; }
+body.modo-escuro #campo-busca-hospitais {background-color: #2c2c2c; border-color: #444; color: #e0e0e0;}
+body.modo-escuro .icone-busca { color: #666; }
+body.modo-escuro .mensagem-nenhum-resultado { color: #888; }
+body.modo-escuro .modal-conteudo { background-color: #1e1e1e; }
+body.modo-escuro #modal-hospital-nome, body.modo-escuro #modal-hospital-corpo h3 { color: #fff; }
+body.modo-escuro .modal-detalhe-item { color: #bbb; }
+body.modo-escuro .lista-medicos-modal .especialidade { color: #888; }
+body.modo-escuro #modal-hospital-corpo hr { border-top-color: #333; }
+body.modo-escuro .pagina-titulo { background-color: #1a1a1a; border-bottom-color: #333; }
+body.modo-escuro .item-hospital { background-color: #1e1e1e; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+body.modo-escuro .item-hospital:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+body.modo-escuro .hospital-status { color: #bbb; }
+body.modo-escuro .hospital-nome { color: #fff; }
+body.modo-escuro .nav-principal a.link-ativo { color: #58b95b; }
+body.modo-escuro { background-color: #121212; color: #e0e0e0; }
+body.modo-escuro .cabecalho-principal, body.modo-escuro .barra-lateral, body.modo-escuro .item-galeria { background-color: #1e1e1e; }
+body.modo-escuro .item-galeria { box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+body.modo-escuro .cabecalho-principal { box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05); }
+body.modo-escuro .logo, body.modo-escuro .nav-principal a:hover { color: #58b95b; }
+body.modo-escuro .nav-principal a, body.modo-escuro .btn-perfil, body.modo-escuro .btn-alternar-tema, body.modo-escuro .btn-fechar-barra-lateral { color: #b0b0b0; }
+body.modo-escuro h1, body.modo-escuro h3, body.modo-escuro h4, body.modo-escuro .titulo-secao h2, body.modo-escuro .item-galeria h3 { color: #fff; }
+.btn-alternar-tema .fa-sun { display: none; }
+body.modo-escuro .btn-alternar-tema .fa-sun { display: inline-block; }
+body.modo-escuro .btn-alternar-tema .fa-moon { display: none; }
+body.modo-escuro .titulo-secao p { color: #bbb; }
+body.modo-escuro .secao-mapa { background-color: #333; }
+body.modo-escuro .rodape-principal { background-color: #1e1e1e; }
+body.modo-escuro .base-rodape { border-top-color: #333; }
+body.modo-escuro .barra-lateral-cabecalho, body.modo-escuro .perfil-barra-lateral, body.modo-escuro .rodape-barra-lateral { border-color: #333; }
+body.modo-escuro .nav-barra-lateral li a { color: #e0e0e0; }
+body.modo-escuro .info-perfil p { color: #888; }
+body.modo-escuro .nav-barra-lateral li a:hover { background-color: #2c2c2c; }
+body.modo-escuro .avatar-perfil { color: #555; }
+body.modo-escuro .nav-principal { border-left-color: #444; }
+body.modo-escuro .secao-corpo-clinico { background-color: #1e1e1e; }
+body.modo-escuro .card-medico { background-color: #2c2c2c; border-color: #444; }
+body.modo-escuro .card-medico h3 { color: #fff; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HISTÓRICO DE CONSULTAS */
+.historico-consultas {
+    padding: 60px 0;
+    background-color: #f1f5f8;
+    text-align: center;
+}
+body.modo-escuro .historico-consultas {
+    background-color: #1a1a1a;
+}
+
+.historico-consultas h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+body.modo-escuro .historico-consultas h2 {
+    color: #fff;
+}
+
+#tabela-consultas {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#tabela-consultas thead {
+    background-color: #4CAF50;
+    color: white;
+    text-align: left;
+}
+
+body.modo-escuro #tabela-consultas thead {
+    background-color: #58b95b;
+}
+
+#tabela-consultas th, #tabela-consultas td {
+    padding: 15px 20px;
+}
+
+#tabela-consultas tbody tr {
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+body.modo-escuro #tabela-consultas tbody tr {
+    background-color: #2c2c2c;
+}
+
+#tabela-consultas tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+body.modo-escuro #tabela-consultas tbody tr:nth-child(even) {
+    background-color: #1e1e1e;
+}
+
+#tabela-consultas tbody tr:hover {
+    background-color: #e0f7e9;
+}
+
+body.modo-escuro #tabela-consultas tbody tr:hover {
+    background-color: #3a3a3a;
+}
+
+#tabela-consultas td, #tabela-consultas th {
+    border-bottom: 1px solid #ddd;
+}
+
+body.modo-escuro #tabela-consultas td, 
+body.modo-escuro #tabela-consultas th {
+    border-bottom: 1px solid #444;
+}
+
+@media (max-width: 768px) {
+    #tabela-consultas thead {
+        display: none;
+    }
+    #tabela-consultas, #tabela-consultas tbody, #tabela-consultas tr, #tabela-consultas td {
+        display: block;
+        width: 100%;
+    }
+    #tabela-consultas tr {
+        margin-bottom: 20px;
+    }
+    #tabela-consultas td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    #tabela-consultas td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 20px;
+        width: calc(50% - 40px);
+        text-align: left;
+        font-weight: bold;
+        color: #4CAF50;
+    }
+    body.modo-escuro #tabela-consultas td::before {
+        color: #58b95b;
+    }
+}
